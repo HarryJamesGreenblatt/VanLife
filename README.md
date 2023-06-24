@@ -1,4 +1,3 @@
-# VanLife
-A fake van rental web app built using Vite and React
+# [VanLife](https://harryjamesgreenblatt.github.io/VanLife/)
 
-[https://harryjamesgreenblatt.github.io/VanLife/](https://harryjamesgreenblatt.github.io/VanLife/)
+A static, single page, van rental mockup web app built using Vite and React
