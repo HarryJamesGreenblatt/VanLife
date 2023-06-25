@@ -193,6 +193,7 @@ header{
     background-color: #ffead0;
     color: #4d4d4d;
     transition: 200ms all cubic-bezier(0.4, 0, 0.2, 1);
+    caret-color: transparent;
 }
 .van-type:hover{
     color: #ffead0;
