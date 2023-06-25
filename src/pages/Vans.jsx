@@ -6,7 +6,7 @@ export default function Vans() {
         () => {
             // promise chaining method
             fetch("/api/vans")
-                .then(res => console.log(res.json()))
+                .then(res => console.log(res))
                 // .then(data => data.vans.map(
                 //     van => console.log(van)
                 // ));
