@@ -165,7 +165,7 @@ header{
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     gap: 34px;
-    margin-top: 57px;
+    margin: 57px 0;
 }
 
 .van-tile a{
