@@ -1,5 +1,6 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, Outlet } from "react-router-dom";
+import HostVanDetailLayout from "../../components/HostVanDetailLayout";
 
 
 export default function HostVanDetail() {
@@ -41,6 +42,8 @@ export default function HostVanDetail() {
                         <h4>{currentVan.price}/day</h4>
                     </div>
                 </div>
+                <HostVanDetailLayout />
+                <Outlet context={{currentVan}}/>
             </div>
         </section>
         :
