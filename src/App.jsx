@@ -5,10 +5,12 @@ import "./server.js"
 import Layout from "./components/Layout.jsx"
 import Vans from "./pages/Vans/Vans.jsx";
 import VanDetail from "./pages/Vans/VanDetail.jsx";
+import HostLayout from "./components/HostLayout.jsx";
+import HostVans from "./pages/Host/HostVans.jsx"
+import HostVanDetail from "./pages/Host/HostVanDetail.jsx"
 import Dashboard from "./pages/Host/Dashboard.jsx"
 import Income from "./pages/Host/Income.jsx"
 import Reviews from "./pages/Host/Reviews.jsx"
-import HostLayout from "./components/HostLayout.jsx";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           
           <Route path="host" element={<HostLayout />}>
             <Route index element={<Dashboard />} />
+            <Route path="vans" element={<HostVans />} />
+            <Route path="vans/:id" element={<HostVanDetail />} />
             <Route path="income" element={<Income />} />
             <Route path="reviews" element={<Reviews />} />
           </Route>

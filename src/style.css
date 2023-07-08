@@ -18,6 +18,12 @@ body{
     scrollbar-width: none;
 }
 
+.site-wrapper{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 
 /************************* 
           Header  
@@ -63,6 +69,12 @@ header{
 }
 .link-button:hover{
     transform: translate(1px, 1px);
+}
+
+header .active-style {
+    font-weight : bold;
+    text-decoration : underline;
+    color : #161616;
 }
 
 
@@ -132,9 +144,95 @@ header{
     font-weight: 600;
 }
 
+.host-nav .active-style {
+    font-weight : bold;
+    text-decoration : underline;
+    color : #161616;
+}
+
+
+/************************* 
+       Host Vans 
+**************************/
+.host-van-link-wrapper{
+    color: unset;
+    text-decoration: unset;
+}
+
+.host-vans-list,
+.host-vans-title{
+    padding-inline: 26px;
+}
+
+.host-van-single{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 15px;
+    padding-block: 18px;
+    padding-left: 24px;
+}
+.host-van-single > img{
+    height: 70px;
+    border-radius: 5px;
+    margin-right: 17px;
+}
+
+.host-van-info h3{
+    font-size: 20px;
+    font-weight: 600;
+    margin-block: 10px;
+}
+
+.host-van-info p{
+    margin-block: 10px;
+}
 
 
 
+
+/************************* 
+     Host Van Details 
+**************************/
+.host-van-detail-layout-container{
+    background-color: white;
+    padding: 24px;
+    margin: 30px 26px;
+}
+
+.host-van-detail{
+    display: flex;
+    align-items: center;
+}
+
+.host-van-detail > img {
+    height: 160px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.host-van-detail-info-text > h3 {
+    margin-top: 24px;
+    margin-bottom: 5px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.host-van-detail-info-text > h4 {
+    font-size: 20px;
+    margin-block: 0;
+}
+
+.back-button{
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin-top: 60px;
+    margin-left: 26px;
+}
+.back-button span:hover {
+    text-decoration: underline;
+}
 
 
 
@@ -316,4 +414,23 @@ i[class*='van-type-'] {
     background-color: #ff8c38;
     color: white;
     font-size: 1.125rem;
+}
+
+
+
+
+
+/************************* 
+          Footer 
+**************************/
+.footer{
+    background-color: #161616;
+    color: #AAAAAA;
+    display: flex;
+    height: 74px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: auto;
+    font-weight: 500;
 }

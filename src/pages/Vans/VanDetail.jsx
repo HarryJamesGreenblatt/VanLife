@@ -7,19 +7,17 @@ export default function VanDetail(){
 
     React.useEffect( () => {
         // promise chaining method
-        fetch(`/api/vans/${params.id}`)
-            .then(res => res.json())
-            .then(data => setVan(data.vans));
+        // fetch(`/api/vans/${params.id}`)
+        //     .then(res => res.json())
+        //     .then(data => setVan(data.vans));
         
         // async await method
-        // async function getVans(){
-        //     const res = await fetch(`/api/vans/${params.id}`);
-        //     const data = await res.json();
-        //     data.vans.map(
-        //         van => console.log(van)
-        //     );
-        // }
-        // getVans();
+        async function getVans(){
+            const res = await fetch(`/api/vans/${params.id}`);
+            const data = await res.json();
+            setVan(data.vans)
+        }
+        getVans();
     },  [params.id])
 
 
