@@ -367,7 +367,7 @@ i[class*='van-type-'] {
 .van-detail-container{
     padding: 27px;
     width: 90%;
-    max-width: 1100px;
+    max-width: 900px;
     margin: 0 auto;
     caret-color: transparent;
 }
@@ -375,6 +375,7 @@ i[class*='van-type-'] {
 .van-detail-container .back-button{
     color: black;
     text-decoration: none;
+    margin-top: 0;
 }
 .van-detail-container .back-button span{
     text-decoration: underline;

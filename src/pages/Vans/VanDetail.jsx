@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 export default function VanDetail(){
     const params = useParams();
@@ -26,14 +26,23 @@ export default function VanDetail(){
             {
                 van 
                 ?
-                <div className="van-detail">
-                    <img src={van.imageUrl} className="van-image"/>
-                    <i className={`van-type ${van.type} selected`}>{van.type}</i>
-                    <h2>{van.name}</h2>
-                    <p className="van-price">${van.price}<span>/day</span></p>
-                    <p>{van.description}</p>
-                    <button className="link-button">Rent this van</button>
-                </div>
+                <section>
+                    <Link
+                        to=".."
+                        relative="path"
+                        className="back-button"
+                    >
+                        &larr; <span>Back to all vans</span>
+                    </Link>
+                    <div className="van-detail">
+                        <img src={van.imageUrl} className="van-image"/>
+                        <i className={`van-type ${van.type} selected`}>{van.type}</i>
+                        <h2>{van.name}</h2>
+                        <p className="van-price">${van.price}<span>/day</span></p>
+                        <p>{van.description}</p>
+                        <button className="link-button">Rent this van</button>
+                    </div>
+                </section>
                 :
                 <h2>Loading...</h2>
             }
