@@ -1,29 +1,38 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
+import { getHostVans } from "../../api.js";
+import { requiredAuth } from "../../utils.js";
+
+
+export async function loader() {
+    await requiredAuth();
+    return getHostVans();
+}
+
 
 export default function HostVans() {
-    const [vans, setVans] = React.useState([]);
+    // const [vans, setVans] = React.useState([]);
+    const vans = useLoaderData();
 
 
-    React.useEffect( () => {
-        // promise chaining method
-        // fetch(`/api/host/vans`)
-        //     .then(res => res.json())
-        //     .then(data => setVans(data.vans));
+    // React.useEffect( () => {
+    //     // promise chaining method
+    //     // fetch(`/api/host/vans`)
+    //     //     .then(res => res.json())
+    //     //     .then(data => setVans(data.vans));
         
-        // async await method
-        async function getVans(){
-            const res = await fetch(`/api/host/vans`);
-            const data = await res.json();
-            setVans(data.vans);
-        }
-        getVans();
-    },  [])
+    //     // async await method
+    //     async function getVans(){
+    //         const res = await fetch(`/api/host/vans`);
+    //         const data = await res.json();
+    //         setVans(data.vans);
+    //     }
+    //     getVans();
+    // },  [])
 
 
     const hostVanEls = vans.map( van => (
         <Link
-            to={`/host/vans/${van.id}`}
+            to={van.id}
             key={van.id}
             className="host-van-link-wrapper"
         >

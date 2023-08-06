@@ -1,22 +1,27 @@
-import React from "react";
-import { useParams, Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLoaderData } from "react-router-dom";
 import HostVanDetailLayout from "../../components/HostVanDetailLayout";
+import { getHostVans } from "../../api";
+import { requiredAuth } from "../../utils";
 
-
+export async function loader({params}){
+    await requiredAuth()
+    return getHostVans(params.id)
+}
 export default function HostVanDetail() {
-    const [currentVan, setCurrentVan] = React.useState(null);
-    const params = useParams();
+    // const [currentVan, setCurrentVan] = React.useState(null);
+    // const params = useParams();
+    const currentVan = useLoaderData();
 
-    React.useEffect(() => {
-        async function getVans() {
-            const res = await fetch(`/api/host/vans/${params.id}`)
-            const data = await res.json();
-            setCurrentVan(data.vans);
-        }
-        getVans();
-    }, [params.id] );
+    // React.useEffect(() => {
+    //     async function getVans() {
+    //         const res = await fetch(`/api/host/vans/${params.id}`)
+    //         const data = await res.json();
+    //         setCurrentVan(data.vans);
+    //     }
+    //     getVans();
+    // }, [params.id] );
 
-    console.log(currentVan);
+    // console.log(currentVan);
 
     return(
         currentVan

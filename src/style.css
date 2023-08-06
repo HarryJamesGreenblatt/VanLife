@@ -23,8 +23,68 @@ body{
     display: flex;
     flex-direction: column;
 }
+.red{
+    color: #cc0000;
+}
+
+/************************* 
+          Login  
+**************************/
+.login-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 27px;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+}
+
+.login-form > input {
+    border: 1px solid rgb(209, 213, 219);
+    height: 40px;
+    text-indent: 10px;
+    font-family: "Inter", sans-serif;
+    box-shadow: 0px 1px 2px rgba(0,0,0,0.05);
+    font-weight: 400;
+}
 
 
+.login-form > input:focus{
+    outline: none;
+}
+
+.login-form > input:first-of-type{
+    border-radius: 6px 6px 0px 0px;
+}
+
+.login-form > input:last-of-type {
+    border-radius: 0px 0px 6px 6px;
+    border-top:  none;
+}
+
+.login-form > button {
+    background-color: #ff8c38;
+    border: none;
+    border-radius: 6px;
+    height: 55px;
+    margin-top: 22px;
+    color: white;
+    font-family: "Inter", sans-serif;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform .2s ease-in-out;
+}
+.login-form > button:hover{
+    transform: translate(1px, 1px);
+}
 /************************* 
           Header  
 **************************/
@@ -76,7 +136,15 @@ header .active-style {
     text-decoration : underline;
     color : #161616;
 }
-
+header .login-link{
+    display: inline-flex;
+    align-items: center;
+}
+header .login-icon{
+    padding-top: .125em;
+    width: 18px;
+    height: 18px;
+}
 
 /************************* 
        Home Page 
@@ -381,6 +449,14 @@ Host Van Details Navigation
 }
 .van-type.selected {
     color: #FFEAD0;
+}
+
+.van-list-filter-buttons{
+    display: flex;
+    flex-wrap: wrap;
+}
+.van-list-filter-buttons > a {
+    margin-right: 15px;
 }
 
 .van-type.simple:hover, .van-type.simple.selected {
