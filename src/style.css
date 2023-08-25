@@ -16,6 +16,7 @@ body::-webkit-scrollbar{
 body{
     -ms-overflow-style: none;
     scrollbar-width: none;
+    caret-color: transparent;
 }
 
 .site-wrapper{
