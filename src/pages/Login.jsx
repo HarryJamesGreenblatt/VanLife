@@ -20,9 +20,15 @@ export default function Login() {
         setStatus("submitting");
         setError(null);
         loginUser(loginFormData)
-            .then(data => navigate("/host"), { replace : true })
+            .then(
+                data => {
+                    navigate("/host"); 
+                    localStorage.setItem("loggedin", true)
+                }, 
+                { replace : true }
+            )
             .catch(err => setError(err) )
-            .finally(() => setStatus("idle"))
+            .finally(() => setStatus("idle"));
     }
 
     function handleChange(e) {
