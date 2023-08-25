@@ -6,7 +6,11 @@ import { requiredAuth } from "../../utils.js";
 
 export async function loader({request}) {
     await requiredAuth(request);
-    return defer({vans: getHostVans()});
+    return defer(
+        {
+            vans: getHostVans()
+        }
+    );
 }
 
 
